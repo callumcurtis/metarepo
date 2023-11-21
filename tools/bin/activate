@@ -5,18 +5,15 @@
 # Usage: source tools/bin/activate
 #
 # This script activates all activation scripts in the hooks directory.
-# Hooks are invoked with the source command. During activation, the
-# project structure information is available. After activation, the
-# project structure information is unset.
+# Hooks are invoked with the source command.
+#
+# This script also sets the standard project structure variables.
 
 # Set project structure information.
-source "$(dirname "${BASH_SOURCE[0]}")/../lib/project_structure.sh"
-set_project_structure_variables
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/standard_project_structure.sh"
+set_standard_project_structure_variables
 
 # Activate all hooks.
 for hook in "${TOOLS_HOOKS_ACTIVATE_DIR}"/*; do
   source "${hook}"
 done
-
-# Unset project structure information.
-unset_project_structure_variables
