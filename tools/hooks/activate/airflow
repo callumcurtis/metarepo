@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# Activate airflow.
+
+export AIRFLOW_HOME="${ENVIRONMENT_AIRFLOW_DIR}"
