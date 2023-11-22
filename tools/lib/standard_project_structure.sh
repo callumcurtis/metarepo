@@ -7,7 +7,8 @@ set_standard_project_structure_variables() {
     TOOLS_DIR="${PROJECT_ROOT_DIR}/tools"
     TOOLS_HOOKS_DIR="${TOOLS_DIR}/hooks"
     TOOLS_HOOKS_ACTIVATE_DIR="${TOOLS_HOOKS_DIR}/activate"
-    ENVIRONMENT_DIR="${PROJECT_ROOT_DIR}/environment"
+    ENVIRONMENT_DIR="${PROJECT_ROOT_DIR}/.environment"
+    ENVIRONMENT_TASK_DIR="${ENVIRONMENT_DIR}/Task"
 }
 
 unset_standard_project_structure_variables() {

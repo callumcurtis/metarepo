@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Bootstrap the development environment.
+#
+# Usage: tools/bin/bootstrap
+#
+# This script installs all minimal dependencies required to run the
+# development environment. It is intended to be run once after cloning the
+# repository.
+
+# Import project structure information.
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/standard_project_structure.sh"
+set_standard_project_structure_variables
+
+# Install Task if it is not already installed.
+if [ ! $(command -v task) ]
+then
+  echo "Installing Task..."
+  sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b "${ENVIRONMENT_TASK_DIR}/bin"
+fi
+source "${TOOLS_HOOKS_ACTIVATE_DIR}/task.sh"

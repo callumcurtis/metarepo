@@ -19,6 +19,6 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/standard_project_structure.sh"
 set_standard_project_structure_variables
 
 # Activate all hooks.
-for hook in "${TOOLS_HOOKS_ACTIVATE_DIR}"/*; do
+for hook in "${TOOLS_HOOKS_ACTIVATE_DIR}"/*.sh; do
   source "${hook}"
 done
