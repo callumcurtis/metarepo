@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash",
+            "args": ["--init-file", "${workspaceFolder}/tools/bin/activate"]
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+}
