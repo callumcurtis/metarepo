@@ -1,0 +1,5 @@
+version: 3
+
+includes:
+  activate: tools/tasks/activate.yaml
+  airflow: tools/tasks/airflow.yaml

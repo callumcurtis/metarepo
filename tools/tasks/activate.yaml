@@ -1,0 +1,10 @@
+version: 3
+
+includes:
+  project-structure: project-structure.yaml
+  airflow: airflow.yaml
+
+tasks:
+  all:
+    cmds:
+      - task: airflow:activate
