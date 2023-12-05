@@ -18,4 +18,3 @@ then
   echo "Installing Task..."
   sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b "${ENVIRONMENT_TASK_DIR}/bin"
 fi
-source "${TOOLS_HOOKS_ACTIVATE_DIR}/task.sh"
