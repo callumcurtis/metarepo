@@ -5,3 +5,13 @@ vars:
     sh: git rev-parse --show-toplevel
   TOOLS_DIR: "{{.PROJECT_ROOT_DIR}}/tools"
   ENVIRONMENT_DIR: "{{.PROJECT_ROOT_DIR}}/.environment"
+  TASK_DIR: "{{.ENVIRONMENT_DIR}}/task"
+
+tasks:
+  activate:
+    silent: true
+    cmds:
+      - echo "export PROJECT_ROOT_DIR={{.PROJECT_ROOT_DIR}}"
+      - echo "export TOOLS_DIR={{.TOOLS_DIR}}"
+      - echo "export ENVIRONMENT_DIR={{.ENVIRONMENT_DIR}}"
+      - echo "export TASK_DIR={{.TASK_DIR}}"

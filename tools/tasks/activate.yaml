@@ -5,13 +5,7 @@ includes:
   airflow: airflow.yaml
 
 tasks:
-  bashrc:
-    silent: true
-    status:
-      - test ! -f "{{.HOME}}/.bashrc"
-    cmds:
-      - cat "{{.HOME}}/.bashrc"
   all:
     cmds:
-      - task: bashrc
       - task: airflow:activate
+      - task: project-structure:activate

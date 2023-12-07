@@ -4,7 +4,25 @@
 #
 # Usage: source tools/bin/bootstrap/activate
 #
-# This script activates the development environment. It is intended to be run
-# in each shell session.
+# This script bootstraps the development environment in the current shell.
 
-export PATH="${ENVIRONMENT_TASK_DIR}/bin:${PATH}"
+# Source the bashrc file if it exists.
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+# Activate task.
+__bootstrap__task_dir="$(git rev-parse --show-toplevel)/.environment/task"
+export PATH="$PATH:$__bootstrap__task_dir/bin"
+
+# Invoke remaining activations.
+eval $(task activate:all)
+
+# Validate the environment.
+if [ "$__bootstrap__task_dir" != "$TASK_DIR" ]; then
+  echo "ERROR: The environment is not properly configured." >&2
+  echo "    TASK_DIR(bootstrap): $__bootstrap__task_dir" >&2
+  echo "    TASK_DIR(task): $TASK_DIR" >&2
+fi
+
+unset __bootstrap__task_dir
