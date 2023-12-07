@@ -2,7 +2,7 @@
 #
 # Bootstrap the development environment.
 #
-# Usage: tools/bin/bootstrap/install
+# Usage: tools/bootstrap/bin/install
 #
 # This script installs all minimal dependencies required to run the
 # development environment. It is intended to be run once after cloning the
