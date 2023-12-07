@@ -9,6 +9,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../tools/bootstrap/bin/activate"
 
 if [ ! $(command -v task) ]; then
   echo "ERROR: task not found in PATH." >&2
+  echo "Please install task by running tools/bootstrap/bin/install." >&2
   return 1
 fi
 
