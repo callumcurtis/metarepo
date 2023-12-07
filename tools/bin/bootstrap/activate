@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Bootstrap the development environment.
+#
+# Usage: source tools/bin/bootstrap/activate
+#
+# This script activates the development environment. It is intended to be run
+# in each shell session.
+
+export PATH="${ENVIRONMENT_TASK_DIR}/bin:${PATH}"
