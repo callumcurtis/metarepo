@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# Bootstrap the development environment.
+#
+# This script bootstraps the development environment in the current shell.
+# It is intended to be invoked on creation of a new shell in VS Code.
+
+source "$(dirname "${BASH_SOURCE[0]}")/../tools/bootstrap/bin/activate"
+
+if [ ! $(command -v task) ]; then
+  echo "ERROR: task not found in PATH." >&2
+  return 1
+fi
+
+# Invoke remaining activations.
+eval $(task activate:all)

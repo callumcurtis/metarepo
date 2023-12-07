@@ -3,7 +3,7 @@
         "bash": {
             "path": "bash",
             "icon": "terminal-bash",
-            "args": ["--init-file", "${workspaceFolder}/tools/bin/bootstrap/activate"]
+            "args": ["--init-file", "${workspaceFolder}/.vscode/activate"]
         }
     },
     "terminal.integrated.defaultProfile.linux": "bash",
