@@ -15,6 +15,12 @@ fi
 __bootstrap__task_dir="$(git rev-parse --show-toplevel)/.environment/task"
 export PATH="$PATH:$__bootstrap__task_dir/bin"
 
+if [ ! $(command -v task) ]; then
+  echo "ERROR: Task is not installed." >&2
+  echo "    TASK_DIR(bootstrap): $__bootstrap__task_dir" >&2
+  return 1
+fi
+
 # Invoke remaining activations.
 eval $(task activate:all)
 
@@ -23,6 +29,5 @@ if [ "$__bootstrap__task_dir" != "$TASK_DIR" ]; then
   echo "ERROR: The environment is not properly configured." >&2
   echo "    TASK_DIR(bootstrap): $__bootstrap__task_dir" >&2
   echo "    TASK_DIR(task): $TASK_DIR" >&2
+  return 1
 fi
-
-unset __bootstrap__task_dir
