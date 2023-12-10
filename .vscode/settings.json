@@ -7,4 +7,11 @@
         }
     },
     "terminal.integrated.defaultProfile.linux": "bash",
+    "yaml.schemas": {
+        "https://taskfile.dev/schema.json": [
+            "file:///workspaces/metarepo/tools/tasks/airflow.yaml",
+            "file:///workspaces/metarepo/tools/tasks/project-structure.yaml",
+            "file:///workspaces/metarepo/tools/tasks/activate.yaml"
+        ]
+    },
 }

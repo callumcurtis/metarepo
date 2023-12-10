@@ -12,11 +12,11 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Set project structure information for bootstrapping.
-source "$(dirname "${BASH_SOURCE[0]}")/../lib/project_structure.sh"
+source $(dirname ${BASH_SOURCE[0]})/../lib/project_structure.sh
 set_bootstrap_project_structure_variables
 
 # Activate task.
-export PATH="$PATH:$__BOOTSTRAP__TASK_DIR/bin"
+export PATH=$PATH:$__BOOTSTRAP__TASK_DIR/bin
 
 # Unset project structure information for bootstrapping.
 unset_bootstrap_project_structure_variables
