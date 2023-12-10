@@ -1,12 +1,12 @@
 version: 3
 
 vars:
-  ENVIRONMENT_AIRFLOW_DIR: "{{.ENVIRONMENT_DIR}}/airflow"
-  AIRFLOW_HOME: "{{.ENVIRONMENT_AIRFLOW_DIR}}"
+  AIRFLOW_DIR: "{{.ENVIRONMENT_DIR}}/airflow"
+  AIRFLOW_HOME: "{{.AIRFLOW_DIR}}"
 
 tasks:
   activate:
     silent: true
     cmds:
-      - echo "export ENVIRONMENT_AIRFLOW_DIR={{.ENVIRONMENT_AIRFLOW_DIR}}"
+      - echo "export AIRFLOW_DIR={{.AIRFLOW_DIR}}"
       - echo "export AIRFLOW_HOME={{.AIRFLOW_HOME}}"
