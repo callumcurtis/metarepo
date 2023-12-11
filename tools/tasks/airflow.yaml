@@ -1,8 +1,13 @@
 version: 3
 
+includes:
+  python: python.yaml
+
 vars:
   AIRFLOW_DIR: "{{.ENVIRONMENT_DIR}}/airflow"
   AIRFLOW_HOME: "{{.AIRFLOW_DIR}}"
+  AIRFLOW_VERSION: 2.7.3
+  CONSTRAINTS_URL: "https://raw.githubusercontent.com/apache/airflow/constraints-{{.AIRFLOW_VERSION}}/constraints-{{.PYTHON_VERSION}}.txt"
 
 tasks:
   standalone:activate:
@@ -10,3 +15,13 @@ tasks:
     cmds:
       - echo "export AIRFLOW_DIR={{.AIRFLOW_DIR}}"
       - echo "export AIRFLOW_HOME={{.AIRFLOW_HOME}}"
+  standalone:install:
+    silent: true
+    deps:
+      - python:exists
+    cmds:
+      - pip install "apache-airflow=={{.AIRFLOW_VERSION}}" --constraint "{{.CONSTRAINTS_URL}}"
+  standalone:run:
+    silent: true
+    cmds:
+      - airflow standalone
