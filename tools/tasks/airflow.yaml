@@ -5,7 +5,7 @@ vars:
   AIRFLOW_HOME: "{{.AIRFLOW_DIR}}"
 
 tasks:
-  activate:
+  standalone:activate:
     silent: true
     cmds:
       - echo "export AIRFLOW_DIR={{.AIRFLOW_DIR}}"

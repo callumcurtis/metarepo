@@ -7,5 +7,5 @@ includes:
 tasks:
   all:
     cmds:
-      - task: airflow:activate
+      - task: airflow:standalone:activate
       - task: project-structure:activate
