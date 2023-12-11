@@ -10,19 +10,15 @@ vars:
   CONSTRAINTS_URL: "https://raw.githubusercontent.com/apache/airflow/constraints-{{.AIRFLOW_VERSION}}/constraints-{{.PYTHON_VERSION}}.txt"
 
 tasks:
-  standalone:activate:
+  activate:
     silent: true
     cmds:
       - echo "export AIRFLOW_DIR={{.AIRFLOW_DIR}}"
       - echo "export AIRFLOW_HOME={{.AIRFLOW_HOME}}"
       - echo "export AIRFLOW_VERSION={{.AIRFLOW_VERSION}}"
-  standalone:install:
+  install:
     silent: true
     deps:
       - python:exists
     cmds:
       - pip install "apache-airflow=={{.AIRFLOW_VERSION}}" --constraint "{{.CONSTRAINTS_URL}}"
-  standalone:run:
-    silent: true
-    cmds:
-      - airflow standalone
