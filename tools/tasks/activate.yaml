@@ -6,6 +6,7 @@ includes:
 
 tasks:
   all:
+    silent: true
     cmds:
       - task: airflow:standalone:activate
       - task: project-structure:activate

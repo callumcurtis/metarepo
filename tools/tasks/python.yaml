@@ -6,5 +6,6 @@ vars:
 
 tasks:
   exists:
+    silent: true
     preconditions:
       - command -v python
