@@ -1,8 +1,5 @@
 version: 3
 
-includes:
-  python: python.yaml
-
 vars:
   AIRFLOW_DIR: "{{.ENVIRONMENT_DIR}}/airflow"
   AIRFLOW_HOME: "{{.AIRFLOW_DIR}}"
@@ -18,7 +15,5 @@ tasks:
       - echo "export AIRFLOW_VERSION={{.AIRFLOW_VERSION}}"
   install:
     silent: true
-    deps:
-      - python:exists
     cmds:
       - pip install "apache-airflow=={{.AIRFLOW_VERSION}}" --constraint "{{.CONSTRAINTS_URL}}"
