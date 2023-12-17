@@ -7,6 +7,6 @@ includes:
 tasks:
   all:
     silent: true
-    cmds:
-      - task: airflow:activate
-      - task: project-structure:activate
+    deps:
+      - airflow:activate
+      - project-structure:activate

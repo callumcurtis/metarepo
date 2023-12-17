@@ -9,6 +9,8 @@ vars:
 tasks:
   activate:
     silent: true
+    deps:
+      - exists
     cmds:
       - echo "export AIRFLOW_DIR={{.AIRFLOW_DIR}}"
       - echo "export AIRFLOW_HOME={{.AIRFLOW_HOME}}"
@@ -17,3 +19,7 @@ tasks:
     silent: true
     cmds:
       - pip install "apache-airflow=={{.AIRFLOW_VERSION}}" --constraint "{{.CONSTRAINTS_URL}}"
+  exists:
+    silent: true
+    preconditions:
+      - command -v airflow
