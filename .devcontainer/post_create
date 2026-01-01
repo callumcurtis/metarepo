@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-#
-# Setup the devcontainer.
-#
-# This script is intended to be invoked exactly once on creation of a new
-# devcontainer.
-
-# Install bootstrap dependencies.
-$(dirname ${BASH_SOURCE[0]})/../tools/bootstrap/bin/install

@@ -1,7 +1,0 @@
-version: 3
-
-includes:
-  project-structure: tools/tasks/project-structure.yaml
-  python: tools/tasks/python.yaml
-  airflow: tools/tasks/airflow.yaml
-  activate: tools/tasks/activate.yaml
