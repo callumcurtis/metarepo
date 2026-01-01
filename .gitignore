@@ -1,0 +1,8 @@
+# direnv
+.direnv/
+
+# scratch
+scratch/
+
+# output
+output/
