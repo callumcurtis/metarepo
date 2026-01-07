@@ -4,3 +4,4 @@
 
 # Items in .gitignore are ignored by ripgrep unless negated below
 !.env
+!untracked/
