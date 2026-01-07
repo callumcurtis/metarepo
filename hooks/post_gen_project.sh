@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# Fix file permissions for files copied from Nix store
+
+# Ensure contents are writeable
 chmod -R u+w .
+
