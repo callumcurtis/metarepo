@@ -1,5 +1,8 @@
 # direnv
 .direnv/
 
-# scratch
-scratch/
+# untracked
+untracked/
+
+# env
+.env

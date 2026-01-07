@@ -1,1 +1,6 @@
+# ripgrep automatically respects .gitignore; since .git/ is not typically added
+# to .gitignore, it is needed here
 .git/
+
+# Items in .gitignore are ignored by ripgrep unless negated below
+!.env
