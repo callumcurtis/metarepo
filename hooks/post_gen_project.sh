@@ -7,3 +7,6 @@ chmod -R u+w .
 mkdir untracked
 touch .env
 
+# Initialize git repo
+git init
+
